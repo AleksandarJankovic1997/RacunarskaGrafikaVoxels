@@ -1,0 +1,26 @@
+Index: src/graphics3d/textures/Checkerboard.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package graphics3d.textures;\n\nimport graphics3d.Material;\nimport graphics3d.Texture;\nimport mars.geometry.Vector;\n\npublic class Checkerboard implements Texture {\n\t\n\tprivate final Vector size;\n\tprivate final Material material0, material1;\n\t\n\t\n\tpublic Checkerboard(Vector size, Material material0, Material material1) {\n\t\tthis.size = size;\n\t\tthis.material0 = material0;\n\t\tthis.material1 = material1;\n\t}\n\t\n\t@Override\n\tpublic Material materialAt(Vector uv) {\n\t\tVector i = uv.div(size).floor();\n\t\tif ((i.xInt() & 1) == (i.yInt() & 1)) {\n\t\t\treturn material0;\n\t\t} else {\n\t\t\treturn material1;\n\t\t}\n\t}\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/graphics3d/textures/Checkerboard.java b/src/graphics3d/textures/Checkerboard.java
+--- a/src/graphics3d/textures/Checkerboard.java	(revision 956a579bd4eb5d79fda972a7928c7150f943e04d)
++++ b/src/graphics3d/textures/Checkerboard.java	(date 1613860218282)
+@@ -15,11 +15,13 @@
+ 		this.material0 = material0;
+ 		this.material1 = material1;
+ 	}
+-	
++
++
++	//
+ 	@Override
+ 	public Material materialAt(Vector uv) {
+ 		Vector i = uv.div(size).floor();
+-		if ((i.xInt() & 1) == (i.yInt() & 1)) {
++		if ((i.xInt() & 1) ==(i.yInt() & 1) ) {
+ 			return material0;
+ 		} else {
+ 			return material1;
